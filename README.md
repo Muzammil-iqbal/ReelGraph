@@ -17,17 +17,17 @@ Some use cases:
 
 Open questions to answer:
 
--what is the simplest version of this problem?
--what is the most concrete use case we are interested in tackling first?
--what will our first end product be? script? image? webapp?
--can we break up the problem in a modular way and work in parallel?
--what are the major components of the problem?
+- what is the simplest version of this problem?
+- what is the most concrete use case we are interested in tackling first?
+- what will our first end product be? script? image? webapp?
+- can we break up the problem in a modular way and work in parallel?
+- what are the major components of the problem?
 
 Potential major components/pipeline:
 
-1-data ingestion. take in the video file or stream, and send each frame to a processor with a timestamp and frame number (do we use keyrfames? how do we do this for various sources?)
-2- frame processing - look at each frame, and, using CV, ID major components of the frame (scene, people, characters, objects, etc...)
-3 - frame context - look for continuity of major components in adjacent frames - can we ID scene changes? can we ID that it is the same scene from a different vantage point? Can we ID characters from different vantage points?
-4 - graph database - create a graph representation that holds the major components ID'ed across frames and scenes as nodes, and automatically connects these nodes with labeled relationships.
-5 - audio - transcribe audio, and pin to various scenes. ID major topics, if possible, and add to graph as node.
-6 - visualization - take the build up graph of nodes and relationships, and somehow translate that into a visual interface.
+1. data ingestion. take in the video file or stream, and send each frame to a processor with a timestamp and frame number (do we use keyrfames? how do we do this for various sources?)
+2. frame processing - look at each frame, and, using CV, ID major components of the frame (scene, people, characters, objects, etc...)
+3.  frame context - look for continuity of major components in adjacent frames - can we ID scene changes? can we ID that it is the same scene from a different vantage point? Can we ID characters from different vantage points?
+4.  graph database - create a graph representation that holds the major components ID'ed across frames and scenes as nodes, and automatically connects these nodes with labeled relationships.
+5.  audio - transcribe audio, and pin to various scenes. ID major topics, if possible, and add to graph as node.
+6.  visualization - take the build up graph of nodes and relationships, and somehow translate that into a visual interface.
